@@ -1,13 +1,13 @@
 {
   "name": "men",
   "version": "1.0.0",
-  "description": "",
+  "description": "All about backend development",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kaushik Mandal",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
