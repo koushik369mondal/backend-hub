@@ -10,6 +10,9 @@ const server = http.createServer((req, res) => {
     if (req.url == "/profile") {
         res.end("Profile Page");
     }
+    if (req.url == "/contact") {
+        res.end("Contact Page");
+    }
 });
 
 server.listen(3000, () => {
