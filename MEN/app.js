@@ -3,6 +3,11 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+app.use((req, res, next) => {
+    console.log("Middleware function executed");
+    return next();
+})
+
 app.get("/", (req, res) => {
     res.render('index')
 });
