@@ -1,5 +1,8 @@
 const express = require("express");
+const morgan = require('morgan')
 const app = express();
+
+app.use(morgan('dev'))
 
 app.set("view engine", "ejs");
 
@@ -17,6 +20,10 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
     res.send("This is the about page");
+});
+
+app.get("/profile", (req, res) => {
+    res.send("This is the profile page");
 });
 
 app.listen(3000, () => {
