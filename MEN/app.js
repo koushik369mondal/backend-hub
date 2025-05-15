@@ -5,6 +5,9 @@ app.set("view engine", "ejs");
 
 app.use((req, res, next) => {
     console.log("Middleware function executed");
+    const a = 2;
+    const b = 3;
+    console.log(a + b);
     return next();
 })
 
