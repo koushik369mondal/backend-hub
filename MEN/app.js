@@ -4,6 +4,9 @@ const app = express();
 
 app.use(morgan('dev'))
 
+app.use(express.json());
+app.use(express.urlencoded({ encoded: true }));
+
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
@@ -18,8 +21,8 @@ app.get("/profile", (req, res) => {
     res.send("This is the profile page");
 });
 
-app.get('/get-form-data', (req, res) => {
-    console.log(req.query);
+app.post('/get-form-data', (req, res) => {
+    console.log(req.body);
     res.send("Form data received");
 })
 
