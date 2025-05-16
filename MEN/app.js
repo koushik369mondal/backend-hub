@@ -6,12 +6,7 @@ app.use(morgan('dev'))
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res, next) => {
-    const a = 2;
-    const b = 3;
-    console.log(a + b);
-    next();
-}, (req, res) => {
+app.get("/", (req, res) => {
     res.render('index')
 });
 
