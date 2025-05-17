@@ -32,14 +32,14 @@ app.post("/register", async (req, res) => {
 
     const { username, email, password } = req.body;
 
-    await userModel.create({
+    const newUser = await userModel.create({
         username: username,
         email: email,
         password: password
     })
 
     console.log(req.body);
-    res.send("User registered");
+    res.send(newUser);
 })
 
 app.post('/get-form-data', (req, res) => {
