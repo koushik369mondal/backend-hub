@@ -43,7 +43,7 @@ app.post("/register", async (req, res) => {
 })
 
 app.get("/get-users", (req, res) => {
-    userModel.findOne({
+    userModel.find({
         username: "charlie"
     }).then((user) => {
         console.log(user);
