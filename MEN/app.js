@@ -60,6 +60,13 @@ app.get("/update-user", async (req, res) => {
     res.send("User updated");
 })
 
+app.get("/delete-user", async (req, res) => {
+    await userModel.findOneAndDelete({
+        username: "demo"
+    })
+    res.send("User deleted");
+})
+
 app.post('/get-form-data', (req, res) => {
     console.log(req.body);
     res.send("Form data received");
