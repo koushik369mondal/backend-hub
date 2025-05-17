@@ -51,6 +51,15 @@ app.get("/get-users", (req, res) => {
     })
 })
 
+app.get("/update-user", async (req, res) => {
+    await userModel.findOneAndUpdate({
+        username: "demo"
+    }, {
+        email: "demo123@gmail.com"
+    })
+    res.send("User updated");
+})
+
 app.post('/get-form-data', (req, res) => {
     console.log(req.body);
     res.send("Form data received");
