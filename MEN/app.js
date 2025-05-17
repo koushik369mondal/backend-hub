@@ -24,6 +24,15 @@ app.get("/profile", (req, res) => {
     res.send("This is the profile page");
 });
 
+app.get("/register", (req, res) => {
+    res.render('register');
+})
+
+app.post("/register", (req, res) => {
+    console.log(req.body);
+    res.send("User registered");
+})
+
 app.post('/get-form-data', (req, res) => {
     console.log(req.body);
     res.send("Form data received");
