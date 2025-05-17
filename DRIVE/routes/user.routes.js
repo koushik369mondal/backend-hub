@@ -3,6 +3,7 @@ const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const userModel = require("../models/user.model");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 router.get("/register", (req, res) => {
     res.render("register");
@@ -72,7 +73,17 @@ router.post("/login",
             })
         }
 
-        
+        const token = jwt.sign({
+            userId: user._id,
+            email: user.email,
+            username: user.username
+        },
+            process.env.JWT_SECRET,
+        )
+        res.json({
+            token
+        })
+
     }
 )
 
