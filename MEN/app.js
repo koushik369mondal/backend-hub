@@ -44,8 +44,9 @@ app.post("/register", async (req, res) => {
 
 app.get("/get-users", (req, res) => {
     userModel.findOne({
-        username: "demo"
+        username: "charlie"
     }).then((user) => {
+        console.log(user);
         res.send(user);
     })
 })
