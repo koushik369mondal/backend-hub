@@ -15,7 +15,10 @@ router.post("/register",
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.send("Invalid input");
+            return res.status(400).json({
+                errors: errors.array(),
+                message: "Invalid data"
+            })
         }
 
         res.send(errors)
