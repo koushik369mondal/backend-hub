@@ -1,8 +1,8 @@
 const express = require("express");
 const morgan = require('morgan')
 const app = express();
-const userModel = require('./models/user')
 const dbConnection = require('./config/db')
+const userModel = require('./models/user')
 
 app.use(morgan('dev'))
 
@@ -28,7 +28,16 @@ app.get("/register", (req, res) => {
     res.render('register');
 })
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
+
+    const { username, email, password } = req.body;
+
+    await userModel.create({
+        username: username,
+        email: email,
+        password: password
+    })
+
     console.log(req.body);
     res.send("User registered");
 })
