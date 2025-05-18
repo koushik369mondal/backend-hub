@@ -10,7 +10,7 @@
 
 <body>
     <main class="p-4 bg-gray-100 dark:bg-gray-800 h-screen w-screen">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button onclick="showPopUp()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             upload file
         </button>
         <div class="pop hidden backdrop-blur fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
@@ -42,7 +42,14 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-    
+    <script>
+        function showPopUp(){
+            document.querySelector('.pop').style.display = 'flex';
+        }
+        function hidePopUp(){
+            document.querySelector('.pop').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
